@@ -1,0 +1,16 @@
+h1, p{
+    align-items: center
+}
+
+#ul1:hover{
+    background-color: aquamarine;
+
+}
+
+#ul1:active{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul{
+    list-style: none
+}
