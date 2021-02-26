@@ -1,0 +1,7 @@
+1. Criar uma variável "n"
+2. Criar uma condição if 
+ 1.Caso n>1: Entra num estado de repetição
+ 2.Caso diferente: Não entra num estado de repetição
+3. Criar uma string sem letra
+4. O loop vai repetir n
+5. Será incrementado um *  na string e impresa a string usando o console
