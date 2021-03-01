@@ -1,20 +1,23 @@
-let n = Math.round(Math.random()*6); // qualquer n entre 0 e 6
-let string= "";
+let n = 4;
+let lineIndex;
+let lineColumn;
+let lineInput = '';
+let symbol = '*';
 
+let midOfMatrix = (n + 1) / 2;
+let controlLeft = midOfMatrix;
+let controlRight= midOfMatrix;
 
-console.log( "O n sorteado:"+ n);
-
-if(n > 1){
-    for(let index = 0; index < n; index +=1){
-        string += "*";
+for (lineIndex = 0; lineIndex <= midOfMatrix; lineIndex += 1) {
+  for (lineColumn = 1; lineColumn <= n; lineColumn += 1) {
+    if (lineColumn > controlRight && lineColumn < controlLeft) {
+      lineInput = lineInput + symbol;
+    } else {
+      lineInput = lineInput + ' ';
     }
-
-    for(let index = 0; index < n; index +=1){
-        console.log(string);
-    }
-        
-}
-
-else{
-    console.log("n não pode ser 0 e nem 1");
-}
+  }
+  console.log(lineInput);
+  lineInput = '';
+  controlRight -= 1;
+  controlLeft += 1;
+};
