@@ -66,7 +66,7 @@
 
         function changeContent(){
             let array = document.getElementsByTagName('p');
-            for(let index in array){
+            for(let index = 0; index < array.length; index++){
                console.log(document.getElementsByTagName('p')[index].innerText);
             }
         }
@@ -76,7 +76,7 @@
 
         function changeCase(){
             let array = document.getElementsByTagName('p');
-            for(let index in array){
+            for(let index = 0; index < array.length; index++){
                 document.getElementsByTagName('p')[index].style.textTransform = 'uppercase';
             }
         }
