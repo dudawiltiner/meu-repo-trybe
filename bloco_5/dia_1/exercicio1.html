@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .style{
+      background-color: aqua;
+    }
+  </style>
+  <body>
+    <h2 id="page-title">Título</h2>
+    <p id="paragraph" class="style">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p id="second-paragraph" class="style">Segundo parágrafo!</p>
+    <script>
+      let paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+      document.querySelector("#page-title").innerText = "Vingadores";
+      document.querySelectorAll(".style")[0].style.color = "black";
+      document.querySelector("#second-paragraph").innerText = "Um filme de pura ação e imaginação da Marvel"
+      document.querySelector("#subtitle").innerText = 'Filme Favorito'
+      console.log(document.querySelector('h4'));
+    </script>
+  </body>
+</html>
