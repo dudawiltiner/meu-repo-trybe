@@ -20,3 +20,4 @@ document.querySelector("#footer-container div").style.backgroundColor= "yellow";
 // tamanho
 
 document.querySelector("#footer-container div").style.height= "30px";
+
