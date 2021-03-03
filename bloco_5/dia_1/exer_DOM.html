@@ -64,6 +64,16 @@
         changeH1('Exercício 5.1 - JavaScript');
 
 
+        function changeContent(){
+            let array = document.getElementsByTagName('p');
+            for(let index in array){
+               console.log(document.getElementsByTagName('p')[index].innerText);
+            }
+        }
+
+        changeContent(); 
+
+
         function changeCase(){
             let array = document.getElementsByTagName('p');
             for(let index in array){
@@ -72,17 +82,6 @@
         }
 
         changeCase();
-
-        /*  function changeCase(){
-            let array = document.getElementsByTagName('p');
-            let string;
-            for(let index in array){
-                string = document.getElementsByTagName('p')[index].innerText;
-                console.log(string.toUpperCase());
-            }
-        }
-
-        changeCase();  */
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
