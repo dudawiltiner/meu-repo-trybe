@@ -1,0 +1,10 @@
+1. Criar uma variável "n"
+2. Criar uma condição if 
+ 1.Caso n>1: Entra num estado de repetição
+ 2.Caso diferente: Não entra num estado de repetição
+3. Criar uma string sem letra
+4. O loop vai repetir n
+5. Incrementar um número numa variável x nula
+5. Outro loop que vai repetir let y = Math.random(n-x/2) vezes para acrescentar espaços
+6. Outro loop que vai repetir  y+1 para acrescentar asteriscos
+7. Imprime o string no final do primeiro loop
