@@ -44,17 +44,10 @@
         console.log(document.querySelector('#primeiroFilho div').parentNode.parentNode.childNodes[5]);
         console.log(document.querySelectorAll('div'));
 
-        for(let index =0; index < document.querySelectorAll('div').length; index ++){
-            let element = document.querySelectorAll('div')[index];
-
-            if(element.idName.includes('pai') || element.idName.includes('elementoOndeVoceEsta')|| element.idName.includes('primeiroFilhoDoFilho')){
-                console.log("passou");
-            }
-
-            else{
-                document.querySelector('body').removeChild(element);
-            }
-        }
+        document.querySelector('#primeiroFilho').remove();
+        document.querySelector('#elementoOndeVoceEsta').firstChild.remove();
+        document.querySelector('#terceiroFilho').remove();
+        document.querySelector('#quartoEUltimoFilho').remove();
 
         
     </script>
