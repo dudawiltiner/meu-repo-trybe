@@ -132,10 +132,23 @@
             document.querySelectorAll('h3')[index].className = 'description';
         }
 
-        // Remove o div criado no passo 5 (aquele que possui a classe left-content ). Utilizando a função .removeChild()
+        //Remove o div criado no passo 5 (aquele que possui a classe left-content ). Utilizando a função .removeChild()
 
         let element = document.querySelector('.left-content');
         document.querySelector('.main-content').removeChild(element);
+
+        //Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div 
+
+        document.querySelector('.right-content').style.marginRight = 'auto';
+
+        //Troca a cor de fundo do elemento pai da div criada no passo 3(aquela que possui a classe center-content ) para a cor verde
+
+        document.querySelector('.center-content').parentNode.style.backgroundColor = 'green';
+
+       
+
+
+        
 
 
     </script>
