@@ -126,13 +126,16 @@
 
         document.querySelector('h1').className = 'title';
 
-         //Adicione a classe description nas 3 tags h3 criadas
+         //Adiciona a classe description nas 3 tags h3 criadas
 
          for(let index = 0; index <  document.querySelectorAll('h3').length; index++){
             document.querySelectorAll('h3')[index].className = 'description';
         }
-       
 
+        // Remove o div criado no passo 5 (aquele que possui a classe left-content ). Utilizando a função .removeChild()
+
+        let element = document.querySelector('.left-content');
+        document.querySelector('.main-content').removeChild(element);
 
 
     </script>
