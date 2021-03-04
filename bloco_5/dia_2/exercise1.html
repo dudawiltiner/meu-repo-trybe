@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="paiDoPai">
+        <div id="pai">
+        <div id="primeiroFilho"></div>
+        <div id="elementoOndeVoceEsta">
+            <div id="primeiroFilhoDoFilho"></div>
+            <div id="segundoEUltimoFilhoDoFilho"></div>
+        </div>
+        Atenção!
+        <div id="terceiroFilho"></div>
+        <div id="quartoEUltimoFilho"></div>
+        </div>
+    </div> 
+    <script>
+
+        console.log(document.getElementById('elementoOndeVoceEsta').parentNode);
+        document.getElementById('elementoOndeVoceEsta').parentNode.style.color = 'red'
+        document.getElementById('elementoOndeVoceEsta').innerText = 'Elemento: Primeiro Filho do Filho';
+        console.log(document.getElementById('pai').childNodes[1]);
+        console.log(document.getElementById('elementoOndeVoceEsta').previousElementSibling);
+        console.log(document.getElementById('elementoOndeVoceEsta').nextSibling);
+        console.log(document.getElementById('elementoOndeVoceEsta').nextSibling.nextSibling);
+        console.log(document.getElementById('pai').childNodes[5]);
+        let div = document.createElement('div');
+        div.innerHTML = 'Irmão';
+        document.querySelector('#pai').appendChild(div);
+        console.log(document.getElementById('pai'));
+        let div1 = document.createElement('div');
+        div1.innerHTML = 'terceiroFilho';
+        document.querySelector('#elementoOndeVoceEsta').appendChild(div1);
+        console.log(document.getElementById('elementoOndeVoceEsta'));
+        let div2 = document.createElement('div');
+        div2.innerHTML = 'Filho';
+        document.querySelector('#primeiroFilho').appendChild(div2);
+        console.log(document.getElementById('primeiroFilho'));
+        console.log(document.querySelector('#primeiroFilho div').parentNode.parentNode.childNodes[5]);
+        console.log(document.querySelectorAll('div'));
+
+        for(let index =0; index < document.querySelectorAll('div').length; index ++){
+            let element = document.querySelectorAll('div')[index];
+
+            if(element.idName.includes('pai') || element.idName.includes('elementoOndeVoceEsta')|| element.idName.includes('primeiroFilhoDoFilho')){
+                console.log("passou");
+            }
+
+            else{
+                document.querySelector('body').removeChild(element);
+            }
+        }
+
+        
+    </script>
+    
+</body>
+</html>
