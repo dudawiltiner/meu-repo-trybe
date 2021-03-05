@@ -51,7 +51,7 @@ document.querySelector('.buttons-container').appendChild(button1);
 let buttonFeriados = document.querySelector('#btn-holiday');
 
 function changeBackground(){
-  console.log('aqui');
+  // console.log('aqui');
   let holiday = document.querySelectorAll('.holiday');
   console.log(holiday);
   for(let index = 0; index < holiday.length; index++){
@@ -75,3 +75,23 @@ friday.innerText = 'Sexta-Feira';
 friday.id = 'btn-friday';
 
 document.querySelector('.buttons-container').appendChild(friday);
+
+// Exercício 5
+
+let buttonFriday = document.querySelector('#btn-friday');
+let arrayFriday = [4,11,18,25];
+
+function changeText(){
+  // console.log('aqui');
+  let friday = document.querySelectorAll('.friday');
+  for(let index = 0; index < friday.length; index++){
+    if( friday[index].innerHTML !== 'SEXTOU, TRYBERS O/'){
+      friday[index].innerHTML = 'SEXTOU, TRYBERS O/';
+    }
+    else{
+      friday[index].innerHTML = arrayFriday[index];
+    }
+  }
+}
+
+buttonFriday.addEventListener('click',changeText);
