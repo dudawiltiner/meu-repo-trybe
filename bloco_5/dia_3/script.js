@@ -44,7 +44,24 @@ button1.innerText = 'Feriados';
 
 button1.id = 'btn-holiday';
 
-document.querySelector('.buttons-container').appendChild(button1); 
+document.querySelector('.buttons-container').appendChild(button1);
 
+// Exercício 3
 
+let buttonFeriados = document.querySelector('#btn-holiday');
 
+function changeBackground(){
+  console.log('aqui');
+  let holiday = document.querySelectorAll('.holiday');
+  console.log(holiday);
+  for(let index = 0; index < holiday.length; index++){
+    if( holiday[index].style.backgroundColor === 'white'){
+      holiday[index].style.backgroundColor = 'rgb(238,238,238)';
+    }
+    else{
+      holiday[index].style.backgroundColor = 'white';
+    }
+  }
+}
+
+buttonFeriados.addEventListener('click',changeBackground);
