@@ -65,3 +65,13 @@ function changeBackground(){
 }
 
 buttonFeriados.addEventListener('click',changeBackground);
+
+// Exercicio 4
+
+let friday = document.createElement('button');
+
+friday.innerText = 'Sexta-Feira';
+
+friday.id = 'btn-friday';
+
+document.querySelector('.buttons-container').appendChild(friday);
