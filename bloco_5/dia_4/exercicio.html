@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div{
+        margin: 1%;
+      }
+
+      article{
+        margin-right: 50%;
+        margin-top: 5%;
+        margin-left: 1%;
+        padding: 1%;
+        border-style: double;
+      }
+    </style>
+</head>
+<body>
+  <h2>Você pode alterar da maneira que quiser</h2>
+  <section>
+      <div id="background-color" class="options">
+        <span>Cor de fundo</span>
+        <button>white</button>
+        <button>black</button>
+        <button>green</button>
+        <button>blue</button>
+        <button>yellow</button>
+      </div>
+      <div id="font-color" class="options">
+        <span>Cor da fonte</span>
+        <button>black</button>
+        <button>red</button>
+        <button>white</button>
+      </div>
+      <div id="font-size" class="options">
+        <span>Tamanho da fonte</span>
+        <button>8pt</button>
+        <button>10pt</button>
+        <button>12pt</button>
+        <button>14pt</button>
+        <button>20pt</button>
+      </div>
+      <div id="line-height" class="options">
+        <span>Espaçamento entre as linhas</span>
+        <button>1</button>
+        <button>normal</button>
+        <button>1.5</button>
+        <button>2.0</button>
+        <button>3.0</button>
+      </div>
+      <div id="font-family" class="options">
+        <span>Tipo da fonte</span>
+        <button>Arial</button>
+        <button>Times New Roman</button>
+      </div>
+  </section>
+
+  <script>
+    // Personalizando a página do usuário
+    window.onload = function() {
+      if(localStorage.getItem("backgroundColor") !== 'undefined'){
+        let article = document.querySelector("article");
+        console.log(article)
+        article.style.backgroundColor = localStorage.getItem("backgroundColor");
+      }
+
+      if(localStorage.getItem("fontColor") !== 'undefined'){
+        article1 = document.querySelector("article")
+        article1.style.color = localStorage.getItem("fontColor")
+      }
+
+      if(localStorage.getItem("fontSize") !== 'undefined'){
+        article2 = document.querySelector("article")
+        article2.style.fontSize = localStorage.getItem("fontSize")
+      }
+
+      if(localStorage.getItem("lineHeight") !== 'undefined'){
+        article3 = document.querySelector("article")
+        article3.style.lineHeight = localStorage.getItem("lineHeight")
+      }
+
+      if(localStorage.getItem("fontFamily") !== 'undefined'){
+        article4 = document.querySelector("article")
+        article4.style.fontFamily = localStorage.getItem("fontFamily")
+      }
+    }
+      
+    // background-color
+    let backgroundColorButtons = document.querySelectorAll("#background-color>button")
+    for (let i = 0; i < backgroundColorButtons.length; i += 1) {
+      backgroundColorButtons[i].addEventListener("click", function(event) {
+        let article = document.querySelector("article")
+        console.log(article)
+        article.style.backgroundColor = event.target.innerHTML
+        localStorage.setItem("backgroundColor", event.target.innerHTML)
+      })
+    }
+
+  
+    // font-color
+    let fontColorButtons = document.querySelectorAll("#font-color>button")
+    for (let i = 0; i < fontColorButtons.length; i += 1) {
+      fontColorButtons[i].addEventListener("click", function(event) {
+        let article1 = document.querySelector("article")
+        article1.style.color = event.target.innerHTML
+        localStorage.setItem("fontColor", event.target.innerHTML)
+      })
+    }
+
+    // font-size
+    let fontSizeButtons = document.querySelectorAll("#font-size>button")
+    for (let i = 0; i < fontSizeButtons.length; i += 1) {
+      fontSizeButtons[i].addEventListener("click", function(event) {
+        let article2 = document.querySelector("article")
+        article2.style.fontSize = event.target.innerHTML
+        localStorage.setItem("fontSize", event.target.innerHTML)
+      })
+    }
+
+    // line-height
+    let lineHeightButtons = document.querySelectorAll("#line-height>button")
+    for (let i = 0; i < lineHeightButtons.length; i += 1) {
+      lineHeightButtons[i].addEventListener("click", function(event) {
+        let article3 = document.querySelector("article")
+        article3.style.lineHeight = event.target.innerHTML
+        localStorage.setItem("lineHeight", event.target.innerHTML)
+      })
+    }
+
+    // font-family
+    let fontFamilyButtons = document.querySelectorAll("#font-family>button")
+    for (let i = 0; i < fontFamilyButtons.length; i += 1) {
+      fontFamilyButtons[i].addEventListener("click", function(event) {
+        let article4 = document.querySelector("article")
+        article4.style.fontFamily = event.target.innerHTML
+        localStorage.setItem("fontFamily", event.target.innerHTML)
+      })
+    }
+    
+
+  </script>
+
+  <article>
+      <h2>O que é o Lorem Ipsum?</h2>
+      <p>
+          O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.
+      </p>
+  </article>
+</body>
+</html>
