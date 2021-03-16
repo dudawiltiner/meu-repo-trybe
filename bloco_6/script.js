@@ -131,13 +131,13 @@ function validarData(data){
     let mes = data.split("/")[1];
     let ano = data.split("/")[2];
     let MyData = new Date(ano, mes - 1, dia); // objetos de data
-    console.log(dia.length);
+    console.log(data.split("/"));
+    //console.log(MyData.getMonth());
     if(dia == undefined || mes == undefined || ano == undefined){
         alert("Data no formato errado.")
     }
     else if(dia.length !== 2 || mes.length !== 2 || ano.length !== 4){
         alert("Data no formato errado.")
-        console.log('dia.length');
     }
     else if((MyData.getMonth() + 1 != mes) || (MyData.getDate() != dia) ||(MyData.getFullYear() != ano)){
         alert("Valores inválidos para o dia, mês ou ano. Por favor corrija.");
