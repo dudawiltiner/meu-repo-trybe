@@ -114,13 +114,16 @@ buttonLimpar.addEventListener('click', function(){
     } 
 }) 
 
+//crio um função que valida da data
 function validarData(data){
     
     let valido = false; 
-
+    // Aqui eu separo os valores do dia, mes, ano com o split e valida se tem o / / / formato pedido no requisito
     let dia = data.split("/")[0];
     let mes = data.split("/")[1];
     let ano = data.split("/")[2];
+
+    // aqui, para não ter que construir IF's e ELSE's para validar se a data deve estar dentro dos intervalos do requisito 2 (os intervalos que uma data padrão deve ser). Validamos isso com uma função do javascript new Data();
     let MyData = new Date(ano, mes - 1, dia); // objetos de data
     console.log(dia.length);
     if(dia.length !== 2 || mes.length !== 2 || ano.length !== 4){
