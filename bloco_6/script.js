@@ -42,7 +42,7 @@ let buttonSalvar = document.querySelector('#salvar');
 
 buttonSalvar.addEventListener('click', function(event){
     
-    // event.preventDefault();
+    event.preventDefault();
     let div = document.createElement('div');
     document.body.appendChild(div);
     let input = document.querySelectorAll('input');
@@ -55,6 +55,8 @@ buttonSalvar.addEventListener('click', function(event){
             let select = document.querySelector('select');
             let p = document.createElement('p');
             if(select.options[select.selectedIndex].value == null){
+                alert('Formulário Incompleto');
+                div.remove();
                 break
             }
             p.innerHTML = select.options[select.selectedIndex].value;
@@ -63,7 +65,9 @@ buttonSalvar.addEventListener('click', function(event){
         else if(index == 6){
             let moradia = document.querySelector('input[name="moradia"]:checked');
             let p = document.createElement('p');
-            if(moradia.value == null){
+            if(moradia == null){
+                alert('Formulário Incompleto');
+                div.remove();
                 break
             }
             p.innerHTML = moradia.value;
@@ -74,6 +78,8 @@ buttonSalvar.addEventListener('click', function(event){
                 let text = document.querySelector('textarea');
                 let p = document.createElement('p');
                 if(text.value == ''){
+                    alert('Formulário Incompleto');
+                    div.remove();
                     break
                 }
                 p.innerHTML = text.value;
@@ -81,11 +87,14 @@ buttonSalvar.addEventListener('click', function(event){
             }
             else if(index == 9){
                 if(validarData(input[index].value) == false){
+                    div.remove();
                     break;
                 }
             }
             let p = document.createElement('p');
             if(input[index].value == ''){
+                alert('Formulário Incompleto');
+                div.remove();
                 break
             }
             p.innerHTML = input[index].value;
@@ -114,20 +123,21 @@ buttonLimpar.addEventListener('click', function(){
     } 
 }) 
 
-//crio um função que valida da data
 function validarData(data){
     
     let valido = false; 
-    // Aqui eu separo os valores do dia, mes, ano com o split e valida se tem o / / / formato pedido no requisito
+
     let dia = data.split("/")[0];
     let mes = data.split("/")[1];
     let ano = data.split("/")[2];
-
-    // aqui, para não ter que construir IF's e ELSE's para validar se a data deve estar dentro dos intervalos do requisito 2 (os intervalos que uma data padrão deve ser). Validamos isso com uma função do javascript new Data();
     let MyData = new Date(ano, mes - 1, dia); // objetos de data
     console.log(dia.length);
-    if(dia.length !== 2 || mes.length !== 2 || ano.length !== 4){
+    if(dia == undefined || mes == undefined || ano == undefined){
         alert("Data no formato errado.")
+    }
+    else if(dia.length !== 2 || mes.length !== 2 || ano.length !== 4){
+        alert("Data no formato errado.")
+        console.log('dia.length');
     }
     else if((MyData.getMonth() + 1 != mes) || (MyData.getDate() != dia) ||(MyData.getFullYear() != ano)){
         alert("Valores inválidos para o dia, mês ou ano. Por favor corrija.");
