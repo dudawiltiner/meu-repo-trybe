@@ -6,7 +6,10 @@
     <title>Form</title>
     <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script>
+
 </head>
 <body>
     <form action="" method="GET" >
@@ -22,7 +25,7 @@
             </div>
             <div class="row mb-3">
                 <label for="email">Email
-                    <input class="form-control" id="inputEmail3" class="afastamento" type="email" maxlength="50" name="email" id="email" required>
+                    <input class="form-control" id="inputEmail3" data-validate-field="email" type="email" maxlength="50" name="email" id="email">
                 </label>
             </div>
             <div class="row mb-3">
@@ -42,7 +45,7 @@
             </div>
             <div class="row mb-3">
                 <legend class="col-form-label col-sm-2 pt-0">Estado</legend>
-                <select class="form-select form-control"  aria-label="Default select example" name="estado" id="estado" required>
+                <select class="form-select"  name="estado" id="estado" required>
                 </select>
             </div>
             <div class="row mb-3">
@@ -82,7 +85,7 @@
             
             <div class="row mb-3">
                 <label for="data">Data
-                    <input  class="form-control" type="text" placeholder="dd/mm/aaaa" name="data" id="data" required>
+                    <input  class="form-control" type="text" placeholder="dd/mm/aaaa" name="data" id="datepicker" required>
                 </label>
             </div>
            
@@ -90,6 +93,10 @@
         <button type="submit" class="btn btn-success" id="salvar">Salvar</button>
     </form>
     <button class="btn btn-danger" id="limpar">Limpar</button>
+    <script src="pikaday.js"></script>
+    <script>
+        var picker = new Pikaday({ field: document.getElementById('datepicker') });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

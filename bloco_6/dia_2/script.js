@@ -42,7 +42,7 @@ let buttonSalvar = document.querySelector('#salvar');
 
 buttonSalvar.addEventListener('click', function(event){
     
-    event.preventDefault();
+    //event.preventDefault();
     let div = document.createElement('div');
     div.className = "inform"
     document.body.appendChild(div);
@@ -87,7 +87,7 @@ buttonSalvar.addEventListener('click', function(event){
                 div.appendChild(p);
             }
             else if(index == 9){
-                if(validarData(input[index].value) == false){
+                if(input[index].value == false){
                     div.remove();
                     break;
                 }
@@ -123,30 +123,3 @@ buttonLimpar.addEventListener('click', function(){
         }
     } 
 }) 
-
-function validarData(data){
-    
-    let valido = false; 
-
-    let dia = data.split("/")[0];
-    let mes = data.split("/")[1];
-    let ano = data.split("/")[2];
-    let MyData = new Date(ano, mes - 1, dia); // objetos de data
-    console.log(data.split("/"));
-    //console.log(MyData.getMonth());
-    if(dia == undefined || mes == undefined || ano == undefined){
-        alert("Data no formato errado.")
-    }
-    else if(dia.length !== 2 || mes.length !== 2 || ano.length !== 4){
-        alert("Data no formato errado.")
-    }
-    else if((MyData.getMonth() + 1 != mes) || (MyData.getDate() != dia) ||(MyData.getFullYear() != ano)){
-        alert("Valores inválidos para o dia, mês ou ano. Por favor corrija.");
-    }
-    else{
-        valido = true;
-    }
-
-    return valido;
-} 
-

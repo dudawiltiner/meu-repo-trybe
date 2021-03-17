@@ -25,14 +25,19 @@ fieldset{
 }
 
 .inform{
-    margin-top: 6%;
-    color: rgb(151, 86, 95);
-    background-color: seashell;
-    width: 80%;
+    margin-top: 20%;
+    background-color: rgb(218, 212, 212);
+    border: 1px solid rgb(178, 180, 180);
+    border-radius: 2%;
+    padding:  3%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
+p{
+    margin-top: 4%;
+}
 
 textarea{
     resize: none;
