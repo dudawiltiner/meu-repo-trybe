@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script>
+
+</head>
+<body>
+    <form action="" method="GET" >
+        <fieldset class="mb-3">
+            <h1>Formulário de Currículo</h1>
+        </fieldset>
+        <fieldset  class="mb-3">
+            <legend>Informações Gerais</legend>
+            <div class="row mb-3">
+                <label for="nome">Nome
+                    <input class="form-control" type="text" maxlength="40" name="nome" id="nome" required>
+                </label>
+            </div>
+            <div class="row mb-3">
+                <label for="email">Email
+                    <input class="form-control" id="inputEmail3" data-validate-field="email" type="email" maxlength="50" name="email" id="email">
+                </label>
+            </div>
+            <div class="row mb-3">
+                <label for="cpf">CPF
+                    <input  class="form-control" type="text" maxlength="11" name="cpf" id="cpf" required>
+                </label>
+            </div>
+            <div class="row mb-3">
+                <label for="adress">Endereço
+                    <input  class="form-control" type="text" maxlength="200" name="adress" id="adress" required>
+                </label>
+            </div>
+            <div class="row mb-3">
+                <label for="cidade">Cidade
+                    <input  class="form-control" type="text" maxlength="28" name="cidade" id="cidade" required>
+                </label>
+            </div>
+            <div class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Estado</legend>
+                <select class="form-select"  name="estado" id="estado" required>
+                </select>
+            </div>
+            <div class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Moradia</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="moradia" id="casa" value= "Casa" required>
+                        <label for="casa"  class="form-check-label">Casa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="moradia" id="ap" value= "Apartamento" required>
+                        <label for="ap"  class="form-check-label">Apartamento</label>
+                    </div>
+                </div>
+            </div>
+           
+            
+        </fieldset>
+        <fieldset  class="mb-3">
+            <legend>Informações Curriculares</legend>
+            <div class="row mb-3">
+                <label for="textarea">Resumo do Currículo <br>
+                    <textarea class="form-control" name="textarea" id="textarea" maxlength="1000" cols="40" rows="10" required></textarea>
+                </label>
+            </div>
+            <div class="row mb-3">
+                <label for="cargo">Cargo
+                    <input  class="form-control" type="text" maxlength="40" name="cargo" id="cargo" required>
+                </label>
+            </div>
+           
+            <div class="row mb-3">
+                <label for="desc_cargo">Descrição do Cargo
+                    <input class="form-control" type="text" maxlength="40" name="desc_cargo" id="desc_cargo" required>
+                </label>
+            </div>
+            
+            <div class="row mb-3">
+                <label for="data">Data
+                    <input  class="form-control" type="text" placeholder="dd/mm/aaaa" name="data" id="datepicker" required>
+                </label>
+            </div>
+           
+        </fieldset>
+        <button type="submit" class="btn btn-success" id="salvar">Salvar</button>
+    </form>
+    <button class="btn btn-danger" id="limpar">Limpar</button>
+    <script src="pikaday.js"></script>
+    <script>
+        var picker = new Pikaday({ field: document.getElementById('datepicker') });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

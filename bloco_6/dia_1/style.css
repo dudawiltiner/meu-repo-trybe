@@ -1,0 +1,43 @@
+body{
+  background-color: rgb(151, 86, 95);  
+  color: seashell;
+  text-align: center;
+}
+
+
+ .afastamento {
+    margin-top: 1%;
+}
+
+fieldset{
+    background-color: rgb(151, 69, 80);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+#limpar, #salvar{
+    width: 9%;
+    height: 5%;
+    margin-top: 1%;
+}
+div{
+    margin-top: 6%;
+    color: rgb(151, 86, 95);
+    background-color: seashell;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+legend{
+    text-align: justify;
+}
+
+textarea{
+    resize: none;
+}
+
+/* input{
+    width: 100%;
+} */
