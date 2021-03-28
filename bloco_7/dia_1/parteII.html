@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<body>
+  <div>
+    <span id ="contagem"></span>
+  </div>
+  <button id="button">Click</button>
+</body>
+<script>
+  let click = 0;
+  let contagem = document.getElementById("contagem");
+  const button = document.getElementById("button");
+
+  button.addEventListener("click", () => contagem.innerHTML = click += 1);
+</script>
+</html>
